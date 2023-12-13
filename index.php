@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,7 @@
     <div class="container mt-3">
         <form action="index.php" method="GET">
             <div class="mb-3">
-                <label for="email" class="form-label">Put an email address</label>
+                <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" name="email">
                 <div class="mt-3">
                     <button type="submit" class="btn btn-secondary">Send</button>
@@ -31,10 +32,11 @@
                             }
                             ?>" role="alert">
 
-            <?php if ($email == true) {
+            <?php 
+            if ($email == true ) {
                 echo 'Email is Valid';
             } else {
-                echo 'NOT a valid Email address';
+                echo 'Is NOT a valid email address';
             }
             ?>
         </div>
