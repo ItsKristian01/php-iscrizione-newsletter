@@ -1,7 +1,3 @@
-<?php 
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,17 +19,25 @@
                     <button type="submit" class="btn btn-secondary">Send</button>
                 </div>
             </div>
-            <?php
-            if (isset($_GET['email'])) {
-                $email = $_GET['email'];
-                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    echo $email . ' is NOT a valid email adress';
-                } else {
-                    header("Location: index.php");
-                }
+        </form>
+        <?php
+        include_once __DIR__ . "/functions.php";
+        ?>
+        <div class="alert <?php
+                            if ($email == true) {
+                                echo "alert-success";
+                            } else {
+                                echo "alert-danger";
+                            }
+                            ?>" role="alert">
+
+            <?php if ($email == true) {
+                echo 'Email is Valid';
+            } else {
+                echo 'NOT a valid Email address';
             }
             ?>
-        </form>
+        </div>
     </div>
 </body>
 
